@@ -443,10 +443,6 @@ exports.updatePlayerStatus = function (obj) {
                 player.installation = installation;
                 player.isConnected = true;
             }
-            //server license feature, disable communication if server license is not available
-            if (player.serverServiceDisabled)
-                player.socket = null;
-
             activePlayers[player._id.toString()] = true;
             if (!player.registered || obj.request ) {
                 Group.findById(player.group._id, function (err, group) {
