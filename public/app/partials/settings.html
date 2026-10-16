@@ -14,10 +14,7 @@
       </div>
     </div>
     <div class="panel-body" ng-show="savedFiles.length == 0">
-      Please register the player ID
-      at pisignage.com to generate the license files.Then either save the license file from the email or download
-      at pisignage.com/subscriptions.<br><br>
-      By uploading license files to your local server, they are downloaded to players automatically.
+      No license files are stored on this server. Upload a file only if your player deployment requires one.
     </div><small class="alert alert-danger" ng-show="statusMsg">{{statusMsg}}</small>
     <div class="form-group" ng-show="savedFiles.length > 0">
       <input
@@ -50,11 +47,11 @@
     <div class="panel-body">
       <form class="form-horizontal" role="form" name="settingsForm">
         <div class="form-group">
-          <label class="col-xs-4 control-label" for="user">username at pisignage.com</label>
+          <label class="col-xs-4 control-label" for="user">Installation name</label>
           <div class="col-xs-4">
             <div class="input-group">
               <input class="form-control" type="text" name="user" ng-model="settings.installation" required=""/><span class="input-group-btn"><a class="btn btn-success" type="button" ng-click="saveSettings()" ng-disabled="!settingsForm.user.$dirty">SAVE</a></span>
-            </div><small class="text-danger">{{loadMsg}}</small>
+            </div><small class="text-muted">Used only as a local data namespace.</small><br/><small class="text-danger">{{loadMsg}}</small>
           </div>
         </div>
         <div class="form-group">

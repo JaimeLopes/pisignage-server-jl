@@ -124,8 +124,6 @@ require("./app/controllers/server-socket-ws").startSIO(wss);
                 }
             });
 
-require('./app/controllers/scheduler');
-
 server.listen(config.port, function () {
     console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));
 });

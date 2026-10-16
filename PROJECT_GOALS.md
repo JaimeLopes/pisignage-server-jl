@@ -28,3 +28,9 @@
 ### 4. Runtime Compatibility
 - Keep the default Docker Compose MongoDB image pinned to 4.4 for the no-AVX CPU.
 - Acceptance: validate the Docker Compose configuration and confirm MongoDB starts on the target hardware with the existing data volume.
+
+### 5. External Service Independence
+- Do not make automatic requests to or downloads from pisignage.com. Keep the server's default operation and player communication local.
+- Player software updates must use release files supplied locally by the operator; they must not be fetched automatically from pisignage.com.
+- The installation name is a local data namespace, not a pisignage.com account.
+- Acceptance: start the server with outbound access to pisignage.com blocked and verify that server startup and normal player configuration continue to work.

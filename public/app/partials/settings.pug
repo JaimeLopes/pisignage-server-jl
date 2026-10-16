@@ -14,10 +14,7 @@
 
 
         .panel-body(ng-show='savedFiles.length == 0')
-                | Please register the player ID
-                | at pisignage.com to generate the license files.Then either save the license file from the email or download
-                | at pisignage.com/subscriptions.<br><br>
-                | By uploading license files to your local server, they are downloaded to players automatically.
+            | No license files are stored on this server. Upload a file only if your player deployment requires one.
         small.alert.alert-danger(ng-show='statusMsg') {{statusMsg}}
         .form-group(ng-show='savedFiles.length > 0')
             input.form-control(
@@ -41,13 +38,15 @@
         .panel-body
             form.form-horizontal(role='form', name='settingsForm')
                 .form-group
-                    label.col-xs-4.control-label(for="user") username at pisignage.com
+                    label.col-xs-4.control-label(for="user") Installation name
                     div.col-xs-4
                         .input-group
                             input.form-control(type='text', name='user', ng-model='settings.installation', required='')
                             span.input-group-btn
                                 a.btn.btn-success(type="button",ng-click='saveSettings()',
                                                 ng-disabled="!settingsForm.user.$dirty") SAVE
+                        small.text-muted Used only as a local data namespace.
+                        br
                         small.text-danger {{loadMsg}}
                 .form-group
                     label.col-xs-4.control-label SSH Password

@@ -22,11 +22,7 @@ angular.module('pisignage.services')
             'ERROR' : 'ERROR'
         };
 
-        var messageTxt = {"type": "serverIp",
-                            "ipAddress": "http://pisignage.com",
-                            "port": 80,
-                            "chromecastIp": "0.0.0.0"},
-            nameSpace = "urn:x-cast:com.pisignage.instasign";
+        var nameSpace = "urn:x-cast:com.pisignage.instasign";
 
         var castStatus = {
                 devicesAvailable: false,
